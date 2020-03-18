@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fgodino/dialogflow-fulfillment-ts.git"
+    "url": "git+https://github.com/fgodino/dialogflow-fulfill-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/fgodino/dialogflow-fulfillment-ts/issues"
+    "url": "https://github.com/fgodino/dialogflow-fulfill-ts/issues"
   },
-  "homepage": "https://github.com/fgodino/dialogflow-fulfillment-ts#readme",
+  "homepage": "https://github.com/fgodino/dialogflow-fulfill-ts#readme",
   "keywords": [
     "dialogflow",
     "api.ai",
