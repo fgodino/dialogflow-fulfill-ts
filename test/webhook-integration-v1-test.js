@@ -240,6 +240,8 @@ const mockSimulatorV1ReponseWebhook = {
     },
     {type: 2, replies: ['Quick Reply', 'Suggestion']},
   ],
+  displayText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
+  speech: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   contextOut: [{name: 'weather', lifespan: 2, parameters: {city: 'Rome'}}],
 };
 
@@ -319,6 +321,14 @@ const mockGoogleV1ResponseWelcome = {
   speech: 'Welcome to my agent!',
   displayText: 'Welcome to my agent!',
   contextOut: [],
+  messages: [
+    {
+      type: 'simple_response',
+      platform: 'google',
+      textToSpeech: 'Welcome to my agent!',
+      displayText: 'Welcome to my agent!',
+    },
+  ],
 };
 
 const mockSlackV1RequestWelcome = {
@@ -369,6 +379,13 @@ const mockSlackV1ResponseWelcome = {
   speech: 'Welcome to my agent!',
   displayText: 'Welcome to my agent!',
   contextOut: [],
+  messages: [
+    {
+      type: 0,
+      platform: 'slack',
+      speech: 'Welcome to my agent!',
+    },
+  ],
 };
 
 const mockFacebookV1RequestWelcome = {
@@ -421,6 +438,13 @@ const mockFacebookV1ResponseWelcome = {
   speech: 'Welcome to my agent!',
   displayText: 'Welcome to my agent!',
   contextOut: [],
+  messages: [
+    {
+      type: 0,
+      platform: 'facebook',
+      speech: 'Welcome to my agent!',
+    },
+  ],
 };
 
 // fallback
@@ -508,6 +532,8 @@ const mockGoogleV1RequestFallback = {
   sessionId: '1515191296300',
 };
 const mockGoogleV1ResponseFallback = {
+  displayText: 'I didn\'t understand',
+  speech: 'I didn\'t understand',
   messages: [
     {
       type: 'simple_response',
@@ -577,6 +603,8 @@ const mockSlackV1ResponseFallback = {
     {type: 0, platform: 'slack', speech: 'I didn\'t understand'},
     {type: 0, platform: 'slack', speech: 'I\'m sorry, can you try again?'},
   ],
+  displayText: 'I didn\'t understand',
+  speech: 'I didn\'t understand',
   contextOut: [],
 };
 
@@ -635,6 +663,8 @@ const mockFacebookV1ResponseFallback = {
     {type: 0, platform: 'facebook', speech: 'I\'m sorry, can you try again?'},
   ],
   contextOut: [],
+  displayText: 'I didn\'t understand',
+  speech: 'I didn\'t understand',
 };
 
 // webhook
@@ -751,6 +781,8 @@ const mockGoogleV1ResponseWebhook = {
       platform: 'google',
     },
   ],
+  displayText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
+  speech: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   contextOut: [{name: 'weather', lifespan: 2, parameters: {city: 'Rome'}}],
 };
 
@@ -823,6 +855,8 @@ const mockSlackV1ResponseWebhook = {
     },
     {type: 2, replies: ['Quick Reply', 'Suggestion'], platform: 'slack'},
   ],
+  speech: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
+  displayText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   contextOut: [{name: 'weather', lifespan: 2, parameters: {city: 'Rome'}}],
 };
 
@@ -897,5 +931,7 @@ const mockFacebookV1ResponseWebhook = {
     },
     {type: 2, replies: ['Quick Reply', 'Suggestion'], platform: 'facebook'},
   ],
+  speech: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
+  displayText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   contextOut: [{name: 'weather', lifespan: 2, parameters: {city: 'Rome'}}],
 };

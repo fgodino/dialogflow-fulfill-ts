@@ -248,6 +248,7 @@ const mockSimulatorV2ResponseOther = {
       quickReplies: {quickReplies: ['Quick Reply', 'Suggestion']},
     },
   ],
+  fulfillmentText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   outputContexts: [
     {
       name:
@@ -338,6 +339,17 @@ const mockGoogleV2RequestWelcome = {
 };
 const mockGoogleV2ResponseWelcome = {
   fulfillmentText: 'Welcome to my agent!',
+  fulfillmentMessages: [
+    {
+      platform: 'ACTIONS_ON_GOOGLE',
+      simpleResponses: {
+        simpleResponses: [{
+          displayText: 'Welcome to my agent!',
+          textToSpeech: 'Welcome to my agent!',
+        }],
+      },
+    },
+  ],
   outputContexts: [],
 };
 
@@ -386,6 +398,14 @@ const mockSlackV2RequestWelcome = {
 const mockSlackV2ResponseWelcome = {
   fulfillmentText: 'Welcome to my agent!',
   outputContexts: [],
+  fulfillmentMessages: [
+    {
+      platform: 'SLACK',
+      text: {
+        text: ['Welcome to my agent!'],
+      },
+    },
+  ],
 };
 
 const mockFacebookV2RequestWelcome = {
@@ -440,6 +460,14 @@ const mockFacebookV2RequestWelcome = {
 const mockFacebookV2ResponseWelcome = {
   fulfillmentText: 'Welcome to my agent!',
   outputContexts: [],
+  fulfillmentMessages: [
+    {
+      platform: 'FACEBOOK',
+      text: {
+        text: ['Welcome to my agent!'],
+      },
+    },
+  ],
 };
 
 // fallback
@@ -554,6 +582,7 @@ const mockGoogleV2ResponseFallback = {
       },
     },
   ],
+  fulfillmentText: 'I didn\'t understand',
   outputContexts: [],
 };
 
@@ -606,6 +635,7 @@ const mockSlackV2ResponseFallback = {
     {text: {text: ['I didn\'t understand']}, platform: 'SLACK'},
     {text: {text: ['I\'m sorry, can you try again?']}, platform: 'SLACK'},
   ],
+  fulfillmentText: 'I didn\'t understand',
   outputContexts: [],
 };
 
@@ -658,6 +688,7 @@ const mockFacebookV2ResponseFallback = {
     {text: {text: ['I didn\'t understand']}, platform: 'FACEBOOK'},
     {text: {text: ['I\'m sorry, can you try again?']}, platform: 'FACEBOOK'},
   ],
+  fulfillmentText: 'I didn\'t understand',
   outputContexts: [],
 };
 
@@ -777,6 +808,7 @@ const mockGoogleV2ResponseWebhook = {
       platform: 'ACTIONS_ON_GOOGLE',
     },
   ],
+  fulfillmentText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   outputContexts: [
     {
       name:
@@ -859,6 +891,7 @@ const mockSlackV2ResponseWebhook = {
       platform: 'SLACK',
     },
   ],
+  fulfillmentText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   outputContexts: [
     {
       name:
@@ -943,6 +976,7 @@ const mockFacebookV2ResponseWebhook = {
       platform: 'FACEBOOK',
     },
   ],
+  fulfillmentText: 'This message is from Dialogflow\'s Cloud Functions for Firebase editor!',
   outputContexts: [
     {
       name:

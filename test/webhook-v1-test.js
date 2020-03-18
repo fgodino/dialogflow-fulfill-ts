@@ -161,7 +161,10 @@ test('Test v1 Twitter text-only response', async (t) => {
       agent.add(textResponse);
     },
     (responseJson) => {
-      t.deepEqual(responseJson, {speech: textResponse, displayText: textResponse, contextOut: []});
+      t.deepEqual(responseJson, {speech: textResponse, displayText: textResponse, contextOut: [], messages: [{
+        speech: textResponse,
+        type: 0,
+      }]});
     }
   );
 });
@@ -578,6 +581,8 @@ const responseSlackV1TextAndCard = {
       platform: 'slack',
     },
   ],
+  displayText: 'text response',
+  speech: 'text response',
   contextOut: [],
 };
 
@@ -681,6 +686,8 @@ const responseGoogleV1TextAndCard = {
       ],
     },
   ],
+  displayText: 'text response',
+  speech: 'text response',
   contextOut: [],
 };
 

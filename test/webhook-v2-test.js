@@ -236,7 +236,15 @@ test('Test v2 Twitter response', async (t) => {
       agent.add(textResponse);
     },
     (responseJson) => {
-      t.deepEqual(responseJson, {fulfillmentText: textResponse, outputContexts: []});
+      t.deepEqual(responseJson, {
+        fulfillmentText: textResponse,
+        outputContexts: [],
+        fulfillmentMessages: [{
+          text: {
+            text: [textResponse],
+          },
+        }],
+      });
     },
   );
 });
@@ -705,6 +713,12 @@ Molecule-Formation-stop.png`,
 const responseFacebookV2Text = {
   fulfillmentText: 'text response',
   outputContexts: [],
+  fulfillmentMessages: [{
+    platform: 'FACEBOOK',
+    text: {
+      text: ['text response'],
+    },
+  }],
 };
 const responseFacebookV2TextAndCard = {
   fulfillmentMessages: [
@@ -723,6 +737,7 @@ Molecule-Formation-stop.png`,
     },
   ],
   outputContexts: [],
+  fulfillmentText: 'text response',
 };
 const responseFacebookV2Card = {
   fulfillmentMessages: [
@@ -743,6 +758,14 @@ Molecule-Formation-stop.png`,
 };
 
 const responseSlackV2Text = {
+  fulfillmentMessages: [
+    {
+      platform: 'SLACK',
+      text: {
+        text: ['text response'],
+      },
+    },
+  ],
   fulfillmentText: 'text response',
   outputContexts: [],
 };
@@ -800,6 +823,7 @@ Molecule-Formation-stop.png`,
       platform: 'SLACK',
     },
   ],
+  fulfillmentText: 'text response',
   outputContexts: [],
 };
 const responseSlackV2Card = {
@@ -917,6 +941,17 @@ Molecule-Formation-stop.png`,
 };
 const responseGoogleV2Text = {
   fulfillmentText: 'text response',
+  fulfillmentMessages: [
+    {
+      platform: 'ACTIONS_ON_GOOGLE',
+      simpleResponses: {
+        simpleResponses: [{
+          displayText: 'text response',
+          textToSpeech: 'text response',
+        }],
+      },
+    },
+  ],
   outputContexts: [],
 };
 const responseGoogleV2TextAndCard = {
@@ -943,6 +978,7 @@ Molecule-Formation-stop.png`,
       platform: 'ACTIONS_ON_GOOGLE',
     },
   ],
+  fulfillmentText: 'text response',
   outputContexts: [],
 };
 
